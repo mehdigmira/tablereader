@@ -1,0 +1,20 @@
+[project]
+name = "tablereader"
+version = "0.1.0"
+description = "AI-powered table reader using LLM"
+requires-python = ">=3.12"
+dependencies = [
+    "openai>=1.65.0",
+    "openpyxl>=3.1.5",
+]
+
+[tool.pyright]
+include = ["*.py"]
+exclude = ["**/node_modules", "**/__pycache__"]
+typeCheckingMode = "basic"
+pythonVersion = "3.11"
+reportMissingImports = true
+reportMissingTypeStubs = false
+
+[tool.setuptools.packages.find]
+where = ["src"]
