@@ -10,7 +10,14 @@ pip install git+https://github.com/mehdigmira/tablereader.git
 
 ## Usage
 
-### Basic Usage (OpenAI)
+Set environment variables:
+
+```bash
+export OPENAI_API_KEY="your-deepseek-api-key"
+export OPENAI_BASE_URL="https://api.deepseek.com"
+```
+
+Then
 
 ```python
 from tablereader import read
@@ -25,28 +32,6 @@ result = read("data.csv", is_csv=True)
 for table in result.tables:
     for row in table:
         print(row)  # Each row is a dict with typed values
-```
-
-### Using DeepSeek
-
-Set environment variables:
-```bash
-export OPENAI_API_KEY="your-deepseek-api-key"
-export OPENAI_BASE_URL="https://api.deepseek.com"
-```
-
-Then use:
-```python
-result = read("data.xlsx", sheet_name="Sheet1", model="deepseek-chat")
-```
-
-Or pass directly:
-```python
-result = read(
-    "data.xlsx",
-    sheet_name="Sheet1",
-    model="deepseek-chat"
-)
 ```
 
 ## Features
